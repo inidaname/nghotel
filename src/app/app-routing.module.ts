@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [
@@ -9,7 +10,12 @@ const routes: Routes = [
     component: AuthComponent,
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
-  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }];
+  {
+    path: 'admin',
+    component: AdminComponent,
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
