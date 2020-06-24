@@ -6,6 +6,11 @@ import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'auth'
+  },
+  {
     path: 'auth',
     component: AuthComponent,
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
