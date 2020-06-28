@@ -52,9 +52,19 @@
       <app-summary></app-summary>
     </div>
   </section>
-  <section class="mt-10 flex p-5 flex-col w-100 justify-around items-center">
-    <div class="w-full py-2">
-      hey
+  <section class="mt-10 hidden p-5 flex-col w-100 justify-around items-center md:flex">
+    <div class="w-full flex my-4 flex-row justify-between items-center sm py-2 px-4">
+      <h4 class="font-medium">Guest Log</h4>
+      <div class="inline-block relative w-1/4">
+        <select name="sort" id="sort" class="block appearance-none bg-white px-4 w-full py-2 shadow rounded leading-tight focus:outline-none border border-gray-400 hover:border-gray-600">
+          <option value="Days">Daily</option>
+          <option value="week">Week</option>
+          <option value="month">Month</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        </div>
+      </div>
     </div>
     <table class="table-auto w-full">
       <thead class="bg-blue-300">
