@@ -5,15 +5,16 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SummaryComponent } from './components/summary/summary.component';
+import { PathNotFoundComponent } from './components/path-not-found/path-not-found.component';
 
 
 @NgModule({
-  declarations: [SideBarComponent, HeaderComponent, SummaryComponent],
+  declarations: [SideBarComponent, HeaderComponent, SummaryComponent, PathNotFoundComponent],
   imports: [
     CommonModule,
     FontAwesomeModule,
     ChartsModule
   ],
-  exports: [SideBarComponent, HeaderComponent, SummaryComponent]
+  exports: [SideBarComponent, HeaderComponent, SummaryComponent, PathNotFoundComponent]
 })
 export class SharedModule { }
