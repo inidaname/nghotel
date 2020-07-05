@@ -1,0 +1,181 @@
+<article class="flex p-3 flex-col rounded-md min-h-screen shadow-sm">
+  <section class="flex-wrap wrap w-100 justify-around items-center flex">
+    <div class="m-1 p-1 justify-around items-center flex flex-wrap wrap w-5/12">
+      <div class="shadow-md border h-2/5 rounded-md p-3 m-3 w-2/5">
+        <h4 class="text-md w-full flex justify-between items-center flex-row font-medium">Total Rooms Discounted <small class="py-2 px-1 text-xs shadow-sm text-white bg-blue-600 flex m-3 rounded-full">32%</small></h4>
+        <p class="my-1 w-full flex flex-row justify-between items-center">24 rooms</p>
+        <p class="flex flex-row justify-between items-center">
+          <small class="font-smaller">in the last <em>24hrs</em></small>
+          <button class="bg-blue-500 font-bold text-white shadow-md text-xs ml-3 py-2 px-2 rounded">Details</button>
+        </p>
+      </div>
+      <div class="shadow-md border rounded-md p-3 m-3 w-2/5">
+        <h4 class="text-md w-full flex justify-between items-center flex-row font-medium">Total Available Rooms <small class="py-2 px-1 text-xs shadow-sm text-white bg-red-600 flex m-3 rounded-full">32%</small></h4>
+        <p class="my-1 w-full flex flex-row justify-between items-center">24 rooms</p>
+        <p class="flex flex-row justify-between items-center">
+          <small class="font-smaller">in <em>24hrs</em></small>
+          <button class="bg-blue-500 font-bold text-white shadow-md text-xs ml-3 py-2 px-2 rounded">Details</button>
+        </p>
+      </div>
+      <div class="shadow-md border rounded-md p-3 m-3 w-2/5">
+        <h4 class="text-md w-full flex justify-between items-center flex-row font-medium">Total Rooms Occupied <small class="py-2 px-1 text-xs shadow-sm text-white bg-green-600 flex m-3 rounded-full">32%</small></h4>
+        <p class="my-1 w-full flex flex-row justify-between items-center">24 rooms</p>
+        <p class="flex flex-row justify-between items-center">
+          <small class="font-smaller">in the last <em>24hrs</em></small>
+          <button class="bg-blue-500 font-bold text-white shadow-md text-xs ml-3 py-2 px-2 rounded">Details</button>
+        </p>
+      </div>
+      <div class="shadow-md border rounded-md p-3 m-3 w-2/5">
+        <h4 class="text-md w-full flex justify-between items-center flex-row font-medium">Total Income Today <small class="py-2 px-1 text-xs shadow-sm text-white bg-yellow-600 flex m-3 rounded-full">32%</small></h4>
+        <p class="my-1 w-full flex flex-row justify-between items-center">24 rooms</p>
+        <p class="flex flex-row justify-between items-center">
+          <small class="font-smaller">in the last <em>24hrs</em></small>
+          <button class="bg-blue-500 font-bold text-white shadow-md text-xs ml-3 py-2 px-2 rounded">Details</button>
+        </p>
+      </div>
+    </div>
+    <div class="m-1 p-3 shadow-md rounded-md border flex flex-col w-5/12">
+      <h2 class="font-medium px-6">Overview of income <small class="font-light">between 2pm to 3pm</small></h2>
+      <div class="flex flex-row justify-between py-5 w-full px-4 items-center">
+        <div class="inline-block relative w-1/2">
+          <select name="sort" id="sort" class="block appearance-none bg-white px-4 w-full py-2 shadow rounded leading-tight focus:outline-none border border-gray-400 hover:border-gray-600">
+            <option value="Days">Daily</option>
+            <option value="week">Week</option>
+            <option value="month">Month</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+          </div>
+        </div>
+        <button class="block shadow py-2 px-4 border border-gray-400 rounded bg-blue-400 text-white text-xs hover:bg-blue-500 hover:border-gray-500 focus:outline-none">View Full Detail</button>
+      </div>
+      <app-summary></app-summary>
+    </div>
+  </section>
+  <section class="mt-10 hidden p-5 flex-col w-100 justify-around items-center shadow rounded mb-10 md:flex">
+    <div class="w-full flex my-4 flex-row justify-between items-center sm py-2 px-4">
+      <h4 class="font-medium">Guest Log</h4>
+      <div class="inline-block relative w-1/4">
+        <select name="sort" id="sort" class="block appearance-none bg-white px-4 w-full py-2 shadow rounded leading-tight focus:outline-none border border-gray-400 hover:border-gray-600">
+          <option value="Days">Daily</option>
+          <option value="week">Week</option>
+          <option value="month">Month</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        </div>
+      </div>
+    </div>
+    <table class="table-auto w-full">
+      <thead class="bg-blue-300">
+        <tr>
+          <td class="px-4 py-2 font-bold">Room No</td>
+          <td class="px-4 py-2 font-bold">SN</td>
+          <td class="px-4 py-2 font-bold">Checked in</td>
+          <td class="px-4 py-2 font-bold">Number of Guest</td>
+          <td class="px-4 py-2 font-bold">Amount Paid</td>
+          <td class="px-4 py-2 font-bold">Status</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- To add data -->
+        <tr>
+          <td class="px-4 py-2">Room No</td>
+          <td class="px-4 py-2">SN</td>
+          <td class="px-4 py-2">Checked in</td>
+          <td class="px-4 py-2">Number of Guest</td>
+          <td class="px-4 py-2">Amount Paid</td>
+          <td class="px-4 py-2">Status</td>
+        </tr>
+        <tr class="bg-gray-200">
+          <td class="px-4 py-2">Room No</td>
+          <td class="px-4 py-2">SN</td>
+          <td class="px-4 py-2">Checked in</td>
+          <td class="px-4 py-2">Number of Guest</td>
+          <td class="px-4 py-2">Amount Paid</td>
+          <td class="px-4 py-2">Status</td>
+        </tr>
+        <tr>
+          <td class="px-4 py-2">Room No</td>
+          <td class="px-4 py-2">SN</td>
+          <td class="px-4 py-2">Checked in</td>
+          <td class="px-4 py-2">Number of Guest</td>
+          <td class="px-4 py-2">Amount Paid</td>
+          <td class="px-4 py-2">Status</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <!-- To create total -->
+        <tr class="bg-darken-3 border-t border-gray-800">
+          <td class="px-4 py-2 font-bold">Room No</td>
+          <td class="px-4 py-2 font-bold">SN</td>
+          <td class="px-4 py-2 font-bold">Checked in</td>
+          <td class="px-4 py-2 font-bold">Number of Guest</td>
+          <td class="px-4 py-2 font-bold">Amount Paid</td>
+          <td class="px-4 py-2 font-bold">Status</td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="bg-white px-4 py-3 flex items-center justify-between w-full border-t border-gray-200 sm:px-6">
+      <div class="flex-1 flex justify-between sm:hidden">
+        <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+          Previous
+        </a>
+        <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+          Next
+        </a>
+      </div>
+      <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+        <div>
+          <p class="text-sm leading-5 text-gray-700">
+            Showing
+            <span class="font-medium">1
+            </span>
+            to
+            <span class="font-medium">10
+            </span>
+            of
+            <span class="font-medium">97
+            </span>
+            results
+          </p>
+        </div>
+        <div>
+          <nav class="relative z-0 inline-flex shadow-sm">
+            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150" aria-label="Previous">
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+            <a href="#" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+              1
+            </a>
+            <a href="#" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+              2
+            </a>
+            <a href="#" class="hidden md:inline-flex -ml-px relative items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+              3
+            </a>
+            <span class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700">
+              ...
+            </span>
+            <a href="#" class="hidden md:inline-flex -ml-px relative items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+              8
+            </a>
+            <a href="#" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+              9
+            </a>
+            <a href="#" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+              10
+            </a>
+            <a href="#" class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150" aria-label="Next">
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
