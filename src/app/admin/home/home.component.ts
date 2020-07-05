@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   templateUrl: './home.component.html',
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  pageTitle: string;
 
-  ngOnInit(): void {
+  constructor(private title: Title) {
+    this.pageTitle = ' Home';
+    title.setTitle(this.title.getTitle()+this.pageTitle)
   }
+
+  ngOnInit(): void {}
 
 }

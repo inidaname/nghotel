@@ -6,7 +6,7 @@
         <path *ngIf="!(toggle.toggler | async)" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
       </svg>
     </button>
-    <h3 class="font-bold text-sm uppercase text-blue-400 sm:text-sm lg:text-2xl">Home Page</h3>
+    <h3 class="font-bold text-sm uppercase text-blue-400 sm:text-sm lg:text-2xl">{{ pageTitle }}</h3>
     <div class="w-32 md:w-40 flex flex-row justify-around md:text-2xl text-gray-300">
       <fa-icon class="hover:text-gray-500" [icon]="user"></fa-icon>
       <fa-icon class="hover:text-gray-500" [icon]="envelop"></fa-icon>
