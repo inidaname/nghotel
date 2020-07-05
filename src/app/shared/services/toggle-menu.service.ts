@@ -15,7 +15,6 @@ export class ToggleMenuService {
   }
 
   public setToggle(toggle: boolean): void {
-    console.log(toggle)
     this.toggled.next(toggle);
   }
 }

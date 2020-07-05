@@ -27,6 +27,8 @@ import { ToggleMenuService } from './services/toggle-menu.service';
     SummaryComponent,
     PathNotFoundComponent
   ],
-  providers: [ToggleMenuService]
+  providers: [
+    ToggleMenuService
+  ]
 })
 export class SharedModule { }

@@ -20,7 +20,6 @@ export class SideBarComponent implements OnInit {
   constructor(private toggle: ToggleMenuService) { }
 
   ngOnInit(): void {
-    this.toggle$.subscribe(e=>console.log(e))
   }
 
 }
