@@ -5,7 +5,7 @@
       <span>View All</span>
     </div>
     <hr class="bg-black w-full mb-2">
-    <div class="px-4 py-5 w-full flex flex-row justify-between items-center">
+    <div class="px-4 py-5 w-full flex flex-col-reverse md:flex-row justify-between items-center">
       <div class="w-full shadow rounded-md p-3 md:w-3/5 mx-3 border">
         <table class="table-auto w-full">
           <thead class="bg-blue-300">
@@ -30,8 +30,15 @@
           </tbody>
         </table>
       </div>
-      <div class="w-full shadow rounded-md p-3 md:w-2/5 mx-3 border">
-        <h4>Add or Edit Room</h4>
+      <div class="w-full shadow flex flex-col justify-around items-center h-full rounded-md p-3 md:w-2/5 mx-3 border">
+        <h4 class="font-bold my-3">Add or Edit Room</h4>
+        <form action="" class="w-full shadow p-5 flex-col justify-around items-center rounded">
+          <small>Select a room from the list to edit or add details to create new room</small>
+          <div class="border my-3 p-3 rounded w-full">
+            <label for="" class="leading-tight w-full">Name</label>
+            <input type="text" class="border">
+          </div>
+        </form>
       </div>
     </div>
   </section>
