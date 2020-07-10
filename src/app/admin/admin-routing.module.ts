@@ -10,7 +10,7 @@ import { PathNotFoundComponent } from '../shared/components/path-not-found/path-
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
-  { path: 'management', pathMatch: 'full', redirectTo: 'management/roomservice' },
+  { path: 'management', component: ManagementComponent },
   { path: 'management/:manage', component: ManagementComponent },
   { path: 'settings', component: SettingsComponent },
   { path: '**', component: PathNotFoundComponent }
