@@ -23,7 +23,7 @@
   <ng-container *ngIf="!(manages$ | async)['manage'];else contentHere">
     <section class="flex flex-col rounded-md shadow w-100 md:p-4 md:m-4 justify-around items-center">
       <div class="w-100 h-auto md:rounded md:border p-1 m-1 md:m-3 md:p-3 flex flex-col md:flex-row">
-        <img src="https://source.unsplash.com/400x400/?room,service,staff" class="m-3 shadow-md rounded-md" alt="">
+        <img src="https://source.unsplash.com/300x300/?room,service,staff" class="m-3 shadow-md rounded-md" alt="">
         <div class="m-3 flex flex-col items-start justify-start">
           <a [routerLink]="['/admin/management', 'roomservice']"><h5 class="font-bold my-1 text-black">Room Management</h5></a>
           <p>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="w-100 h-auto md:rounded md:border p-1 m-1 md:m-3 md:p-3 flex flex-col md:flex-row">
-        <img src="https://source.unsplash.com/400x400/?domestic,staff" class="m-3 shadow-md rounded-md" alt="">
+        <img src="https://source.unsplash.com/300x300/?domestic,staff" class="m-3 shadow-md rounded-md" alt="">
         <div class="m-3 flex flex-col items-start justify-start">
           <a [routerLink]="['/admin/management', 'storeservice']"><h5 class="font-bold my-1 text-black">Store Management</h5></a>
           <p>
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="w-100 h-auto md:rounded md:border p-1 m-1 md:m-3 md:p-3 flex flex-col md:flex-row">
-        <img src="https://source.unsplash.com/400x400/?store,staff" class="m-3 shadow-md rounded-md" alt="">
+        <img src="https://source.unsplash.com/300x300/?store,staff" class="m-3 shadow-md rounded-md" alt="">
         <div class="m-3 flex flex-col items-start justify-start">
           <a [routerLink]="['/admin/management', 'otherservice']"><h5 class="font-bold my-1 text-black">Other Management</h5></a>
           <p>
