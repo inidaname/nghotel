@@ -6,10 +6,11 @@ import { HomeComponent } from './home/home.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SharedModule } from '../shared/shared.module';
 import { ManagementComponent } from './management/management.component';
+import { StaffComponent } from './staff/staff.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, SettingsComponent, ManagementComponent],
+  declarations: [HomeComponent, SettingsComponent, ManagementComponent, StaffComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
