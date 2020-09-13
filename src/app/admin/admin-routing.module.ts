@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { ManagementComponent } from './management/management.component';
 import { SettingsComponent } from './settings/settings.component';
 import { StaffComponent } from './staff/staff.component';
+import { ReportComponent } from './report/report.component';
 import { PathNotFoundComponent } from '../shared/components/path-not-found/path-not-found.component';
 
 
@@ -14,6 +15,8 @@ const routes: Routes = [
   { path: 'management', component: ManagementComponent },
   { path: 'management/:manage', component: ManagementComponent },
   { path: 'staff', component: StaffComponent },
+  { path: 'report', component: ReportComponent },
+  { path: 'report/:report', component: ReportComponent },
   { path: 'settings', component: SettingsComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
