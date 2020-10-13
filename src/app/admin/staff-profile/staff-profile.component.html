@@ -5,15 +5,61 @@
         <img src="" alt="user profile" class="rounded-full mb-2 mx-auto w-32 h-32 border">
         <figcaption class="w-full  font-bold text-gray-700">User Profile Name</figcaption>
       </figure>
-      <div class="w-full rounded h-full ml-8 border p-5">
-        <p>User Current Status: Online</p>
-        <p>User Current position: Retuarant</p>
-        <p>User Today's total sales: N23,472</p>
+      <div class="w-full rounded h-full ml-8 border p-3 flex flex-row">
+        <div class="w-1/2 h-full flex flex-col justify-around items-start">
+          <p>Staff Current Status: Online</p>
+          <p>Staff Current position: Restuarant</p>
+          <p>Staff Today's total sales: N23,472</p>
+        </div>
+        <div class="w-1/2 h-full flex flex-col justify-around items-start">
+          <p>Lodge Today's cash sales:
+            <input type="text" class="border shadow-sm rounded-md mx-2 border-gray-600 py-1" name="" id="">
+            <button class="py-1 px-3 bg-blue-500 rounded-md">Submit</button>
+          </p>
+          <p>Approve Cash Lodge Request: 13,000
+            <button class="py-1 px-3 bg-green-500 rounded-md mx-2">Approve</button>
+            <button class="py-1 px-3 bg-red-500 rounded-md mx-2">Deny</button></p>
+          <p>Approve Inventory Request: <button class="py-1 px-3 bg-blue-500 rounded-md">View Details</button> <!-- Initiate a modal to display request --></p>
+        </div>
       </div>
     </div>
 
-    <div class="w-full m-2 border rounded-lg h-56 p-5">
-      Shows user editable details
+    <div class="w-full flex flex-wrap justify-between items-start m-2 border rounded-lg h-75 p-5">
+      <div class="shadow rounded-md h-24 px-3 py-2 w-1/4">
+        <h5 class="h4 font-bold text-sm text-gray-600 text-center">Staff Aproval Status: <small>Deactivated</small></h5>
+        <hr>
+        <fieldset class="text-sm flex flex-row mt-2 text-white justify-around items-center w-full">
+          <button class="border px-3 rounded-lg py-2 bg-green-600">Activate</button>
+          <button class="border px-3 rounded-lg py-2 bg-yellow-600">Suspend</button>
+          <button class="border px-3 rounded-lg py-2 bg-red-600">Deactivate</button>
+        </fieldset>
+      </div>
+      <div class="shadow rounded-md h-24 px-3 py-2 w-1/4">
+        <h5 class="h4 font-bold text-sm text-gray-600 text-center">Staff Current Assignment: <small>Restaurant</small></h5>
+        <hr>
+        <fieldset class="text-sm flex flex-row mt-2 text-white justify-around items-center w-full">
+          <select class="border-gray-500 w-3/5 p-1 border bg-white" name="assignment" id="assignment">
+            <option value="restaurant">Restaurant</option>
+            <option value="miniBar">Mini Bar</option>
+            <option value="mainbar">Main Bar</option>
+          </select>
+          <button class="bg-blue-500 p-2 rounded-lg shadow">Confirm</button>
+        </fieldset>
+      </div>
+      <div class="shadow rounded-md h-24 px-3 py-2 w-1/4">
+        <h5 class="h4 font-bold text-sm text-gray-600 text-center">Total Sales Today: <small>N23,472</small></h5>
+        <hr>
+        <fieldset class="text-sm flex flex-row mt-2 text-black justify-around items-center w-full">
+          <span>Cash: 13,000</span> <span>Card: 10,472</span> <span>Outstanding: 19,000</span>
+        </fieldset>
+      </div>
     </div>
   </section>
+  <section class="flex flex-col rounded-md shadow w-100 md:p-4 md:m-4 justify-around items-center">
+    This will daily hold the sales logs
+  </section>
+  <section class="flex flex-col rounded-md shadow w-100 md:p-4 md:m-4 justify-around items-center">
+    This will hold items logs
+  </section>
+
 </article>
