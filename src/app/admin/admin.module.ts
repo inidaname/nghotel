@@ -8,10 +8,11 @@ import { SharedModule } from '../shared/shared.module';
 import { ManagementComponent } from './management/management.component';
 import { StaffComponent } from './staff/staff.component';
 import { ReportComponent } from './report/report.component';
+import { StaffProfileComponent } from './staff-profile/staff-profile.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, SettingsComponent, ManagementComponent, StaffComponent, ReportComponent],
+  declarations: [HomeComponent, SettingsComponent, ManagementComponent, StaffComponent, ReportComponent, StaffProfileComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
