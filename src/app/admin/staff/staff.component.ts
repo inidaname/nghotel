@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./staff.component.scss']
 })
 export class StaffComponent implements OnInit {
-  manages: any; //this will be from database
-  manages$: Observable<any>; //check this
+  manages: any; // this will be from database
+  manages$: Observable<any>; // check this
   sub: any;
   pageTitle: string;
 
@@ -23,9 +23,6 @@ export class StaffComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe(params => {
-      this.manages = params['manage'];
-    });
   }
 
 }

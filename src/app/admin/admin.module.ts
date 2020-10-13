@@ -12,7 +12,14 @@ import { StaffProfileComponent } from './staff-profile/staff-profile.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, SettingsComponent, ManagementComponent, StaffComponent, ReportComponent, StaffProfileComponent],
+  declarations: [
+    HomeComponent,
+    SettingsComponent,
+    ManagementComponent,
+    StaffComponent,
+    ReportComponent,
+    StaffProfileComponent
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,
