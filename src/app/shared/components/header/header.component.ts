@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { faBell, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { ToggleMenuService } from '../../services/toggle-menu.service';
 import { Title } from '@angular/platform-browser';
+import { Router, RouterEvent } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -15,16 +17,27 @@ export class HeaderComponent implements OnInit {
   user = faUser;
   envelop = faEnvelope;
   toggleState: boolean;
+  menuTog: boolean;
 
   constructor(
     public toggle: ToggleMenuService,
-    private title: Title
+    private title: Title,
+    public router: Router
   ) {
+    this.menuTog = false;
     this.toggleState = false;
+    router.events.pipe(
+      filter((e: RouterEvent) => e instanceof RouterEvent)
+   ).subscribe((e: RouterEvent) => {
+     if (e.url.startsWith('/home')) {
+       this.menuTog = true;
+       console.log(e.id, e.url);
+     }
+   });
   }
 
   ngOnInit(): void {
-    this.pageTitle = this.title.getTitle().split('|').pop().trim()
+    this.pageTitle = this.title.getTitle().split('|').pop().trim();
   }
 
   toggleMenu(): void {
