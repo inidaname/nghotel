@@ -2,18 +2,28 @@
   <nav class="flex-col justify-around items-center w-full h-full" [class]="!(toggle$ | async) ? 'hidden' : 'flex'">
     <span>
       <fa-icon [icon]="building"></fa-icon>
+      <br>
+      Home
     </span>
     <span>
       <fa-icon [icon]="calender"></fa-icon>
+      <br>
+      Management
     </span>
     <span>
       <fa-icon [icon]="profile"></fa-icon>
+      <br>
+      Staffs
     </span>
     <span>
       <fa-icon [icon]="wrench"></fa-icon>
+      <br>
+      Settings
     </span>
     <span>
       <fa-icon [icon]="money"></fa-icon>
+      <br>
+      Report
     </span>
   </nav>
 </aside>
