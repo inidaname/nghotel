@@ -1,0 +1,10 @@
+<app-header></app-header>
+<!-- <app-side-bar></app-side-bar> -->
+<main class="transition-all duration-500 ease-in-out z-0 mt-16 ml-auto mr-auto md:mr-3 bg-white p-1 md:p-5 md:mt-20" [class]="!(toggle.toggler | async) ? 'w-screen' : 'w-11/12'">
+  <router-outlet></router-outlet>
+  <div class="w-full">
+    <p class="text-center text-gray-500 text-xs mt-10 w-full mb-5">
+      &copy; 2020 All Hands Co. All rights reserved
+    </p>
+  </div>
+</main>

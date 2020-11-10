@@ -25,7 +25,8 @@ import { ToggleMenuService } from './services/toggle-menu.service';
     SideBarComponent,
     HeaderComponent,
     SummaryComponent,
-    PathNotFoundComponent
+    PathNotFoundComponent,
+    FontAwesomeModule
   ],
   providers: [
     ToggleMenuService
