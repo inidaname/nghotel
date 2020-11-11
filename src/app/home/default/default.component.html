@@ -1,1 +1,36 @@
-<p>default works!</p>
+<article class="flex p-1 md:p-3 flex-col w-full rounded-md min-h-screen">
+  <section class="flex-wrap w-100 justify-around items-center h-32 flex">
+    <div class="shadow p-3 m-3 rounded-lg w-full md:w-1/5">
+      <a [routerLink]="['../roomservice']" routerLinkActive="router-link-active" >
+        <h4 class="font-bold text-sm border-b-2">Room Service</h4>
+        <p class="p-3">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis molestiae veniam sunt sit officiis quam impedit, ea in veritatis tempora a, magni labore nobis repellat facere beatae eveniet adipisci consequatur?
+        </p>
+      </a>
+    </div>
+    <div class="shadow p-3 m-3 rounded-lg w-full md:w-1/5">
+      <a [routerLink]="['../saleservice']" routerLinkActive="router-link-active" >
+        <h4 class="font-bold text-sm border-b-2">Sales Service</h4>
+        <p class="p-3">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis molestiae veniam sunt sit officiis quam impedit, ea in veritatis tempora a, magni labore nobis repellat facere beatae eveniet adipisci consequatur?
+        </p>
+      </a>
+    </div>
+    <div class="shadow p-3 m-3 rounded-lg w-full md:w-1/5">
+      <a [routerLink]="['../otherservice']" routerLinkActive="router-link-active" >
+        <h4 class="font-bold text-sm border-b-2">Other Services</h4>
+        <p class="p-3">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis molestiae veniam sunt sit officiis quam impedit, ea in veritatis tempora a, magni labore nobis repellat facere beatae eveniet adipisci consequatur?
+        </p>
+      </a>
+    </div>
+    <div class="shadow p-3 m-3 rounded-lg w-full md:w-1/5">
+      <a [routerLink]="['../setting']" routerLinkActive="router-link-active" >
+        <h4 class="font-bold text-sm border-b-2">Settings</h4>
+        <p class="p-3">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis molestiae veniam sunt sit officiis quam impedit, ea in veritatis tempora a, magni labore nobis repellat facere beatae eveniet adipisci consequatur?
+        </p>
+      </a>
+    </div>
+  </section>
+</article>
