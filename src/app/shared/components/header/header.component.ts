@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faBell, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faUser, faEnvelope, faHome } from '@fortawesome/free-solid-svg-icons';
 import { ToggleMenuService } from '../../services/toggle-menu.service';
 import { Title } from '@angular/platform-browser';
 import { Router, RouterEvent } from '@angular/router';
@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   bell = faBell;
   user = faUser;
   envelop = faEnvelope;
+  home = faHome;
   toggleState: boolean;
   menuTog: boolean;
 
