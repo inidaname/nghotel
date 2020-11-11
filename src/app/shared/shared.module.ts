@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SummaryComponent } from './components/summary/summary.component';
 import { PathNotFoundComponent } from './components/path-not-found/path-not-found.component';
 import { ToggleMenuService } from './services/toggle-menu.service';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ToggleMenuService } from './services/toggle-menu.service';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    ChartsModule
+    ChartsModule,
+    RouterModule
   ],
   exports: [
     SideBarComponent,

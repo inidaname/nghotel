@@ -9,7 +9,9 @@
       </button>
     </ng-container>
     <ng-template #userTemplate>
-      <fa-icon class="cursor-pointer text-gray-300 text-sm sm:text-sm md:text-2xl lg:text-2xl hover:text-gray-500" [icon]="home"></fa-icon>
+      <a [routerLink]="['./']" routerLinkActive="router-link-active" >
+        <fa-icon class="cursor-pointer text-gray-300 text-sm sm:text-sm md:text-2xl lg:text-2xl hover:text-gray-500" [icon]="home"></fa-icon>
+      </a>
     </ng-template>
     <h3 class="font-bold text-sm uppercase text-blue-400 sm:text-sm lg:text-2xl">{{ pageTitle }}</h3>
     <div class="cursor-pointer w-32 md:w-40 flex flex-row justify-around md:text-2xl text-gray-300">
