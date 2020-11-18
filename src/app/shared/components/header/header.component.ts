@@ -32,7 +32,6 @@ export class HeaderComponent implements OnInit {
    ).subscribe((e: RouterEvent) => {
      if (e.url.startsWith('/home')) {
        this.menuTog = true;
-       console.log(e.id, e.url);
      }
    });
   }

@@ -8,6 +8,7 @@ import { SummaryComponent } from './components/summary/summary.component';
 import { PathNotFoundComponent } from './components/path-not-found/path-not-found.component';
 import { ToggleMenuService } from './services/toggle-menu.service';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     SummaryComponent,
     PathNotFoundComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ToggleMenuService
