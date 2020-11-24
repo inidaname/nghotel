@@ -8,6 +8,7 @@ import { SalesServiceComponent } from './sales-service/sales-service.component';
 import { OtherServiceComponent } from './other-service/other-service.component';
 import { DefaultComponent } from './default/default.component';
 import { SharedModule } from '../shared/shared.module';
+import { GuestFormsComponent } from './components/guest-forms/guest-forms.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     SalesServiceComponent,
     OtherServiceComponent,
     DefaultComponent,
+    GuestFormsComponent,
   ],
   imports: [
     CommonModule,

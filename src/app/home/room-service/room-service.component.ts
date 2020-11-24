@@ -38,8 +38,9 @@ export class RoomServiceComponent implements OnInit {
     })
   }
 
+  f () { return this.destination }
+
   public changeState(state: string, event: Event): string {
-    console.log('See ')
     event.preventDefault();
     this.formState = state;
     return state;
