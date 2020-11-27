@@ -40,7 +40,7 @@
     <div class="w-full mt-3 pr-3 flex flex-col justify-end items-end">
       <button class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
       [class]="(!guestDetails.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-700 bg-green-800 shadow'"
-      [disabled]="!guestDetails.valid" (click)="changeState('userDestination', $event)">Next</button>
+      [disabled]="!guestDetails.valid" (click)="changeState('userDestination', $event, guestDetails)">Next</button>
     </div>
   </ng-container>
 
@@ -79,7 +79,7 @@
         (click)="changeState('guestProfile', $event)">Back</button>
       <button class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
       [class]="(!guestDetails.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
-        (click)="changeState('guestContact', $event)">Next</button>
+        (click)="changeState((guestFormDetail.nationality === 'Nigeria') ? 'stateOfOrigin' : 'guestContact', $event, destination)">Next</button>
     </div>
   </ng-container>
 
@@ -94,6 +94,14 @@
       <label for="localGovt" class="mb-2 text-sm">Guest's Local Govt</label>
       <!-- This selection -->
       <input type="text" formControlName="localGovt" id="localGovt" class="w-full px-2 py-1 border shadow-sm rounded-md">
+    </div>
+    <div class="w-full mt-3 pr-3 flex flex-row justify-between items-center">
+      <button class="transition-all duration-500 px-5 py-2 bg-red-900 rounded-md font-bold text-sm text-white"
+
+        (click)="changeState('guestProfile', $event)">Back</button>
+      <button class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
+      [class]="(!guestDetails.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
+        (click)="changeState('guestContact', $event)">Next</button>
     </div>
   </ng-container>
 
@@ -158,6 +166,15 @@
         <input type="text" formControlName="expairyDate" id="expairyDate" class="w-full px-2 py-1 border shadow-sm rounded-md">
       </div>
     </div>
+    <div class="w-full mt-3 pr-3 flex flex-row justify-between items-center">
+      <button class="transition-all duration-500 px-5 py-2 bg-red-900 rounded-md font-bold text-sm text-white"
+
+        (click)="changeState('guestProfile', $event, guestIdentity)">Back</button>
+      <button class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
+      [class]="(!guestDetails.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
+        (click)="changeState('guestContact', $event)">Next</button>
+    </div>
+
   </ng-container>
 </form>
 </div>

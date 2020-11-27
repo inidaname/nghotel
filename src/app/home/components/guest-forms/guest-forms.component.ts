@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { } from '../../../shared/interface/guestform';
+import { GuestDetails } from '../../../shared/interface/guest-details';
 
 @Component({
   selector: 'app-guest-forms',
@@ -15,10 +15,12 @@ export class GuestFormsComponent implements OnInit {
   contactDetail: FormGroup;
   guestIdentity: FormGroup;
   stateOfOrigin: FormGroup;
+  guestFormDetail: GuestDetails;
 
   constructor(
     private fb: FormBuilder
   ) {
+    this.guestFormDetail = Object();
     this.formState = 'guestIdentity';
   }
 
@@ -28,15 +30,16 @@ export class GuestFormsComponent implements OnInit {
       guestAddress: ['', Validators.required],
       guestGender: [''],
       guestBirthday: [''],
+      nationality: ['', Validators.required],
       guestOccupation: [''],
     });
 
     this.destination = this.fb.group({
       arrivingFrom: [''],
       destination: [''],
-      nationality: [''],
       arrivalDate: [''],
       departDate: [''],
+      reasonOfVisit: ['']
     });
 
     this.contactDetail = this.fb.group({
@@ -63,7 +66,17 @@ export class GuestFormsComponent implements OnInit {
 
   f () { return this.destination }
 
-  public changeState(state: string, event: Event): string {
+  public changeState(state: string, event: Event, form?: FormGroup): string {
+
+    if (form){
+      for (const key in form.value) {
+        if (Object.prototype.hasOwnProperty.call(form.value, key)) {
+          const element = form.value[key];
+          this.guestFormDetail[key] = element;
+          console.log(this.guestFormDetail)
+        }
+      }
+    }
     event.preventDefault();
     this.formState = state;
     return state;
