@@ -12,11 +12,14 @@ export class GuestFormsComponent implements OnInit {
   formState: string;
   guestDetails: FormGroup;
   destination: FormGroup;
+  contactDetail: FormGroup;
+  guestIdentity: FormGroup;
+  stateOfOrigin: FormGroup;
 
   constructor(
     private fb: FormBuilder
   ) {
-    this.formState = 'userDestination';
+    this.formState = 'guestIdentity';
   }
 
   ngOnInit(): void {
@@ -34,7 +37,28 @@ export class GuestFormsComponent implements OnInit {
       nationality: [''],
       arrivalDate: [''],
       departDate: [''],
-    })
+    });
+
+    this.contactDetail = this.fb.group({
+      guestPhoneNumber: [''],
+      guestEmail: [''],
+      nextOfKinName: [''],
+      nextOfKinEmail: [''],
+      nextOfKinNumber: [''],
+    });
+
+    this.guestIdentity = this.fb.group({
+      placeOfWork: [''],
+      idCard: [''],
+      idNumber: [''],
+      issueDate: [''],
+      expairyDate: [''],
+    });
+
+    this.stateOfOrigin = this.fb.group({
+      stateOrigin: [''],
+      localGovt: [''],
+    });
   }
 
   f () { return this.destination }
