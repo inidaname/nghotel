@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { } from '../../../shared/interface/guestform';
 
 @Component({
@@ -8,8 +9,39 @@ import { } from '../../../shared/interface/guestform';
 })
 export class GuestFormsComponent implements OnInit {
 
-  constructor() { }
+  formState: string;
+  guestDetails: FormGroup;
+  destination: FormGroup;
 
-  ngOnInit(): void { }
+  constructor(
+    private fb: FormBuilder
+  ) {
+    this.formState = 'userDestination';
+  }
 
+  ngOnInit(): void {
+    this.guestDetails = this.fb.group({
+      guestName: ['', Validators.required],
+      guestAddress: ['', Validators.required],
+      guestGender: [''],
+      guestBirthday: [''],
+      guestOccupation: [''],
+    });
+
+    this.destination = this.fb.group({
+      arrivingFrom: [''],
+      destination: [''],
+      nationality: [''],
+      arrivalDate: [''],
+      departDate: [''],
+    })
+  }
+
+  f () { return this.destination }
+
+  public changeState(state: string, event: Event): string {
+    event.preventDefault();
+    this.formState = state;
+    return state;
+  }
 }

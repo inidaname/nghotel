@@ -1,1 +1,74 @@
-<p>guest-forms works!</p>
+<div class="rounded-lg p-3 flex flex-col items-center justify-start bg-gray-300 m-5 relative min-h-500 w-310 shadow-lg">
+  <h4 class="font-bold text-md">Book A Guest</h4>
+<form class="flex flex-col w-full h-auto mt-2">
+  <ng-container *ngIf="formState === 'guestProfile'" [formGroup]="guestDetails">
+    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+      <label for="guestName" class="mb-2 text-sm">Guest's Full Name</label>
+      <input type="text" formControlName="guestName" id="guestName" class="w-full px-2 py-1 border shadow-sm rounded-md">
+    </div>
+    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+      <label for="guestAddress" class="mb-2 text-sm">Guest's Address</label>
+      <!-- This textarea -->
+      <input type="text" formControlName="guestAddress" id="guestAddress" class="w-full px-2 py-1 border shadow-sm rounded-md">
+    </div>
+    <div class="w-full flex flex-row justify-evenly">
+      <div class="flex flex-col mx-1 w-1/2 my-2 border border-gray-600 rounded-md p-2">
+        <label for="guestGender" class="mb-2 text-sm">Guest's Gender</label>
+        <!-- This selection -->
+        <input type="text" formControlName="guestGender" id="guestGender" class="w-full px-2 py-1 border shadow-sm rounded-md">
+      </div>
+      <div class="flex flex-col mx-1 w-1/2 my-2 border border-gray-600 rounded-md p-2">
+        <label for="guestBirthday" class="mb-2 text-sm">Guest's DoB</label>
+        <!-- This selection -->
+        <input type="text" formControlName="guestBirthday" id="guestBirthday" class="w-full px-2 py-1 border shadow-sm rounded-md">
+      </div>
+    </div>
+    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+      <label for="guestOccupation" class="mb-2 text-sm">Guest's Occupation</label>
+      <!-- This textarea -->
+      <input type="text" formControlName="guestOccupation" id="guestOccupation" class="w-full px-2 py-1 border shadow-sm rounded-md">
+    </div>
+    <div class="w-full mt-3 pr-3 flex flex-col justify-end items-end">
+      <button class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
+      [class]="(!guestDetails.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-700 bg-green-800 shadow'"
+      [disabled]="!guestDetails.valid" (click)="changeState('userDestination', $event)">Next</button>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="formState==='userDestination'" [formGroup]="destination">
+    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+      <label for="arrivingFrom" class="mb-2 text-sm">Arriving From</label>
+      <input type="text" formControlName="arrivingFrom" id="arrivingFrom" class="w-full px-2 py-1 border shadow-md rounded-md">
+    </div>
+    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+      <label for="destination" class="mb-2 text-sm">Guest's Destination</label>
+      <!-- This textarea -->
+      <input type="text" formControlName="destination" id="destination" class="w-full px-2 py-1 border shadow-sm rounded-md">
+    </div>
+    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+      <label for="guestGender" class="mb-2 text-sm">Guest's Nationality</label>
+      <!-- This selection -->
+      <input type="text" formControlName="nationality" id="nationality" class="w-full px-2 py-1 border shadow-sm rounded-md">
+    </div>
+    <div class="w-full flex flex-row justify-evenly">
+      <div class="flex flex-col mx-1 w-1/2 my-2 border border-gray-600 rounded-md p-2">
+        <label for="arrivalDate" class="mb-2 text-sm">Date of Arrival</label>
+        <!-- This textarea -->
+        <input type="text" formControlName="arrivalDate" id="arrivalDate" class="w-full px-2 py-1 border shadow-sm rounded-md">
+      </div>
+      <div class="flex flex-col mx-1 w-1/2 my-2 border border-gray-600 rounded-md p-2">
+        <label for="departDate" class="mb-2 text-sm">Date to Depart</label>
+        <!-- This textarea -->
+        <input type="text" formControlName="departDate" id="departDate" class="w-full px-2 py-1 border shadow-sm rounded-md">
+      </div>
+    </div>
+    <div class="w-full mt-3 pr-3 flex flex-row justify-between items-center">
+      <button class="transition-all duration-500 px-5 py-2 bg-red-900 rounded-md font-bold text-sm text-white"
+
+        (click)="changeState('guestProfile', $event)">Back</button>
+      <button class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
+      [class]="(!guestDetails.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
+        (click)="changeState('userDestination', $event)">Next</button>
+    </div>
+  </ng-container>
+</form>
+</div>
