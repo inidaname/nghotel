@@ -15,13 +15,14 @@ export class GuestFormsComponent implements OnInit {
   contactDetail: FormGroup;
   guestIdentity: FormGroup;
   stateOfOrigin: FormGroup;
+  uploadForm: FormGroup;
   guestFormDetail: GuestDetails;
 
   constructor(
     private fb: FormBuilder
   ) {
     this.guestFormDetail = Object();
-    this.formState = 'guestIdentity';
+    this.formState = null;
   }
 
   ngOnInit(): void {
@@ -35,36 +36,41 @@ export class GuestFormsComponent implements OnInit {
     });
 
     this.destination = this.fb.group({
-      arrivingFrom: [''],
-      destination: [''],
-      arrivalDate: [''],
-      departDate: [''],
+      arrivingFrom: ['', Validators.required],
+      destination: ['', Validators.required],
+      arrivalDate: ['', Validators.required],
+      departDate: ['', Validators.required],
       reasonOfVisit: ['']
     });
 
     this.contactDetail = this.fb.group({
-      guestPhoneNumber: [''],
-      guestEmail: [''],
+      guestPhoneNumber: ['', Validators.required],
+      guestEmail: ['', Validators.required],
       nextOfKinName: [''],
       nextOfKinEmail: [''],
       nextOfKinNumber: [''],
     });
 
     this.guestIdentity = this.fb.group({
-      placeOfWork: [''],
-      idCard: [''],
-      idNumber: [''],
-      issueDate: [''],
-      expairyDate: [''],
+      placeOfWork: ['', Validators.required],
+      idCard: ['', Validators.required],
+      idNumber: ['', Validators.required],
+      issueDate: ['', Validators.required],
+      expairyDate: ['', Validators.required],
     });
 
     this.stateOfOrigin = this.fb.group({
       stateOrigin: [''],
       localGovt: [''],
     });
+
+    this.uploadForm = this.fb.group({
+      idCardFront: [''],
+      idCardBack: ['']
+    });
   }
 
-  f () { return this.destination }
+  f = (form: FormGroup) => form.controls ;
 
   public changeState(state: string, event: Event, form?: FormGroup): string {
 

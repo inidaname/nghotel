@@ -4,39 +4,57 @@
 <form class="flex flex-col w-full h-auto mt-2 text-gray-800">
 
   <!-- guest personal details -->
-  <ng-container *ngIf="formState === 'guestProfile'" [formGroup]="guestDetails">
+  <ng-container *ngIf="formState === 'guestProfile' || formState === null" [formGroup]="guestDetails">
     <h5 class="font-black text-center text-sm mb-1">Guest's Details</h5>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+
+    <div
+    [class]="(f(guestDetails).guestName.touched && f(guestDetails).guestName.invalid) ? 'border-red-800' : 'border-gray-600'"
+    class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="guestName" class="mb-2 text-sm">Guest's Full Name</label>
       <input type="text" formControlName="guestName" id="guestName" class="w-full px-2 py-1 border shadow-sm rounded-md">
     </div>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+
+    <div
+    [class]="(f(guestDetails).guestAddress.touched && f(guestDetails).guestAddress.invalid) ? 'border-red-800' : 'border-gray-600'"
+    class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="guestAddress" class="mb-2 text-sm">Guest's Address</label>
       <!-- This textarea -->
       <input type="text" formControlName="guestAddress" id="guestAddress" class="w-full px-2 py-1 border shadow-sm rounded-md">
     </div>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+
+    <div
+    [class]="(f(guestDetails).nationality.touched && f(guestDetails).nationality.invalid) ? 'border-red-800' : 'border-gray-600'"
+    class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="nationality" class="mb-2 text-sm">Guest's Nationality</label>
       <!-- This selection -->
       <input type="text" formControlName="nationality" id="nationality" class="w-full px-2 py-1 border shadow-sm rounded-md">
     </div>
+
     <div class="w-full flex flex-row justify-evenly">
-      <div class="flex flex-col mx-1 w-1/2 my-2 border border-gray-600 rounded-md p-2">
+      <div
+      [class]="(f(guestDetails).guestGender.touched && f(guestDetails).guestGender.invalid) ? 'border-red-800' : 'border-gray-600'"
+      class="flex flex-col mx-1 w-1/2 my-2 border rounded-md p-2">
         <label for="guestGender" class="mb-2 text-sm">Guest's Gender</label>
         <!-- This selection -->
         <input type="text" formControlName="guestGender" id="guestGender" class="w-full px-2 py-1 border shadow-sm rounded-md">
       </div>
-      <div class="flex flex-col mx-1 w-1/2 my-2 border border-gray-600 rounded-md p-2">
+      <div
+      [class]="(f(guestDetails).guestBirthday.touched && f(guestDetails).guestBirthday.invalid) ? 'border-red-800' : 'border-gray-600'"
+      class="flex flex-col mx-1 w-1/2 my-2 border rounded-md p-2">
         <label for="guestBirthday" class="mb-2 text-sm">Guest's DoB</label>
         <!-- This selection -->
         <input type="text" formControlName="guestBirthday" id="guestBirthday" class="w-full px-2 py-1 border shadow-sm rounded-md">
       </div>
     </div>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+
+    <div
+    [class]="(f(guestDetails).guestOccupation.touched && f(guestDetails).guestOccupation.invalid) ? 'border-red-800' : 'border-gray-600'"
+    class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="guestOccupation" class="mb-2 text-sm">Guest's Occupation</label>
       <!-- This textarea -->
       <input type="text" formControlName="guestOccupation" id="guestOccupation" class="w-full px-2 py-1 border shadow-sm rounded-md">
     </div>
+
     <div class="w-full mt-3 pr-3 flex flex-col justify-end items-end">
       <button class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
       [class]="(!guestDetails.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-700 bg-green-800 shadow'"
@@ -47,28 +65,28 @@
   <!-- guest destination -->
   <ng-container *ngIf="formState==='userDestination'" [formGroup]="destination">
     <h5 class="font-black text-center text-sm mb-1">Guest's Destination Information</h5>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="arrivingFrom" class="mb-2 text-sm">Arriving From</label>
       <input type="text" formControlName="arrivingFrom" id="arrivingFrom" class="w-full px-2 py-1 border shadow-md rounded-md">
     </div>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="destination" class="mb-2 text-sm">Guest's Destination</label>
       <!-- This textarea -->
       <input type="text" formControlName="destination" id="destination" class="w-full px-2 py-1 border shadow-sm rounded-md">
     </div>
     <div class="w-full flex flex-row justify-evenly">
-      <div class="flex flex-col mx-1 w-1/2 my-2 border border-gray-600 rounded-md p-2">
+      <div class="flex flex-col mx-1 w-1/2 my-2 border rounded-md p-2">
         <label for="arrivalDate" class="mb-2 text-sm">Date of Arrival</label>
         <!-- This textarea -->
         <input type="text" formControlName="arrivalDate" id="arrivalDate" class="w-full px-2 py-1 border shadow-sm rounded-md">
       </div>
-      <div class="flex flex-col mx-1 w-1/2 my-2 border border-gray-600 rounded-md p-2">
+      <div class="flex flex-col mx-1 w-1/2 my-2 border rounded-md p-2">
         <label for="departDate" class="mb-2 text-sm">Date to Departure</label>
         <!-- This textarea -->
         <input type="text" formControlName="departDate" id="departDate" class="w-full px-2 py-1 border shadow-sm rounded-md">
       </div>
     </div>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="reasonOfVisit" class="mb-2 text-sm">Reason of Visit</label>
       <!-- This selection -->
       <input type="text" formControlName="reasonOfVisit" id="reasonOfVisit" class="w-full px-2 py-1 border shadow-sm rounded-md">
@@ -77,20 +95,22 @@
       <button class="transition-all duration-500 px-5 py-2 bg-red-900 rounded-md font-bold text-sm text-white"
 
         (click)="changeState('guestProfile', $event)">Back</button>
-      <button class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
-      [class]="(!guestDetails.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
+      <button
+      [disabled]="!destination.valid"
+      class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
+      [class]="(!destination.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
         (click)="changeState((guestFormDetail.nationality === 'Nigeria') ? 'stateOfOrigin' : 'guestContact', $event, destination)">Next</button>
     </div>
   </ng-container>
 
   <!-- if guest is Nigerian show form -->
   <ng-container *ngIf="formState==='stateOfOrigin'" [formGroup]="stateOfOrigin">
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="stateOrigin" class="mb-2 text-sm">Guest's State of Origin</label>
       <!-- This selection -->
       <input type="text" formControlName="stateOrigin" id="stateOrigin" class="w-full px-2 py-1 border shadow-sm rounded-md">
     </div>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="localGovt" class="mb-2 text-sm">Guest's Local Govt</label>
       <!-- This selection -->
       <input type="text" formControlName="localGovt" id="localGovt" class="w-full px-2 py-1 border shadow-sm rounded-md">
@@ -100,67 +120,74 @@
 
         (click)="changeState('guestProfile', $event)">Back</button>
       <button class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
-      [class]="(!guestDetails.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
-        (click)="changeState('guestContact', $event)">Next</button>
+      [class]="(!stateOfOrigin.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
+      [disabled]="!stateOfOrigin.valid" (click)="changeState('guestContact', $event, stateOfOrigin)">Next</button>
     </div>
   </ng-container>
 
   <!-- guest contact information -->
   <ng-container *ngIf="formState==='guestContact'" [formGroup]="contactDetail">
     <h5 class="font-black text-center text-sm mb-1">Guest's Contact Information</h5>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="guestPhoneNumber" class="mb-2 text-sm">Guest's Phone Number</label>
       <input type="tel" formControlName="guestPhoneNumber" id="guestPhoneNumber" class="w-full px-2 py-1 border shadow-md rounded-md">
     </div>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="guestEmail" class="mb-2 text-sm">Guest's Email</label>
       <input type="email" formControlName="guestEmail" id="guestEmail" class="w-full px-2 py-1 border shadow-md rounded-md">
     </div>
     <h5 class="font-black text-center text-sm mb-1">Guest's Next of Kin Details</h5>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="nextOfKinName" class="mb-2 text-sm">Full Name</label>
       <input type="text" formControlName="nextOfKinName" id="nextOfKinName" class="w-full px-2 py-1 border shadow-md rounded-md">
     </div>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="nextOfKinEmail" class="mb-2 text-sm">Email</label>
       <input type="email" formControlName="nextOfKinEmail" id="nextOfKinEmail" class="w-full px-2 py-1 border shadow-md rounded-md">
     </div>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="nextOfKinNumber" class="mb-2 text-sm">Phone Number</label>
       <input type="tel" formControlName="nextOfKinNumber" id="nextOfKinNumber" class="w-full px-2 py-1 border shadow-md rounded-md">
     </div>
     <div class="w-full mt-3 pr-3 flex flex-row justify-between items-center">
       <button class="transition-all duration-500 px-5 py-2 bg-red-900 rounded-md font-bold text-sm text-white"
-
-        (click)="changeState('userDestination', $event)">Back</button>
+        (click)="changeState((guestFormDetail.nationality === 'Nigeria') ? 'stateOfOrigin' : 'userDestination', $event)">Back</button>
       <button class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
-      [class]="(!guestDetails.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
-        (click)="changeState('guestIdentity', $event)">Next</button>
+      [class]="(!contactDetail.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
+      [disabled]="!contactDetail.valid" (click)="changeState('guestIdentity', $event, contactDetail)">Next</button>
     </div>
   </ng-container>
 
   <!-- guest means of identity -->
   <ng-container *ngIf="formState==='guestIdentity'" [formGroup]="guestIdentity">
     <h5 class="font-black text-center text-sm mb-1">Guest's Identification Details</h5>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div
+    [class]="(f(guestIdentity).placeOfWork.touched && f(guestIdentity).placeOfWork.invalid) ? 'border-red-800' : 'border-gray-600'"
+    class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="placeOfWork" class="mb-2 text-sm">Place of Work</label>
       <input type="text" formControlName="placeOfWork" id="placeOfWork" class="w-full px-2 py-1 border shadow-md rounded-md">
     </div>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div
+    [class]="(f(guestIdentity).idCard.touched && f(guestIdentity).idCard.invalid) ? 'border-red-800' : 'border-gray-600'"
+    class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="idCard" class="mb-2 text-sm">Mean's of Identification</label>
       <input type="text" formControlName="idCard" id="idCard" class="w-full px-2 py-1 border shadow-md rounded-md">
     </div>
-    <div class="flex flex-col w-full my-2 border border-gray-600 rounded-md p-2">
+    <div class="flex flex-col w-full my-2 border rounded-md p-2">
       <label for="idNumber" class="mb-2 text-sm">ID Number</label>
       <input type="text" formControlName="idNumber" id="idNumber" class="w-full px-2 py-1 border shadow-md rounded-md">
     </div>
     <div class="w-full flex flex-row justify-evenly">
-      <div class="flex flex-col mx-1 w-1/2 my-2 border border-gray-600 rounded-md p-2">
+      <div
+      [class]="(f(guestIdentity).issueDate.touched && f(guestIdentity).issueDate.invalid) ? 'border-red-800' : 'border-gray-600'"
+      class="flex flex-col mx-1 w-1/2 my-2 border rounded-md p-2">
         <label for="issueDate" class="mb-2 text-sm">Issue Date</label>
         <!-- This textarea -->
         <input type="text" formControlName="issueDate" id="issueDate" class="w-full px-2 py-1 border shadow-sm rounded-md">
       </div>
-      <div class="flex flex-col mx-1 w-1/2 my-2 border border-gray-600 rounded-md p-2">
+      <div
+      [class]="(f(guestIdentity).expairyDate.touched && f(guestIdentity).expairyDate.invalid) ? 'border-red-800' : 'border-gray-600'"
+      class="flex flex-col mx-1 w-1/2 my-2 border rounded-md p-2">
         <label for="expairyDate" class="mb-2 text-sm">Date of Expire</label>
         <!-- This textarea -->
         <input type="text" formControlName="expairyDate" id="expairyDate" class="w-full px-2 py-1 border shadow-sm rounded-md">
@@ -168,13 +195,17 @@
     </div>
     <div class="w-full mt-3 pr-3 flex flex-row justify-between items-center">
       <button class="transition-all duration-500 px-5 py-2 bg-red-900 rounded-md font-bold text-sm text-white"
-
-        (click)="changeState('guestProfile', $event, guestIdentity)">Back</button>
+        (click)="changeState('guestContact', $event)">Back</button>
       <button class="transition-all duration-500 px-5 py-2 rounded-md font-bold text-sm text-white"
-      [class]="(!guestDetails.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
-        (click)="changeState('guestContact', $event)">Next</button>
+      [class]="(!guestIdentity.valid) ? 'cursor-not-allowed hover:bg-gray-500 bg-gray-400' : 'active:translate-x-10 cursor-pointer hover:bg-green-400 bg-green-500 shadow'"
+      [disabled]="!guestIdentity.valid" (click)="changeState('uploadsection', $event, guestIdentity)">Next</button>
     </div>
+  </ng-container>
 
+  <!-- upload documents section -->
+  <ng-container *ngIf="formState==='uploadsection'" [formGroup]="uploadForm">
+    <input type="hidden" formControlName="idCardFront">
+    <input type="hidden" formControlName="idCardBack">
   </ng-container>
 </form>
 </div>
