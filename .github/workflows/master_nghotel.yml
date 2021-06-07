@@ -34,5 +34,5 @@ jobs:
         app-name: nghotel
         slot-name: Production
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E0FC9548828142A790C5F03CA41F14FB }}
-        package: .
+        package: ./nghotel
 
